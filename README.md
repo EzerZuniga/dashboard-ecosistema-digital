@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎓 Dashboard Ecosistema Digital Académico
+# Dashboard Ecosistema Digital Académico
 
 ### Plataforma de Análisis Avanzado del Rendimiento Estudiantil
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Sobre el Proyecto](#-sobre-el-proyecto)
 - [Características Principales](#-características-principales)
@@ -33,44 +33,44 @@
 
 ---
 
-## 🎯 Sobre el Proyecto
+## Sobre el Proyecto
 
 **Dashboard Ecosistema Digital Académico** es una plataforma web profesional de análisis de datos diseñada para instituciones educativas. Proporciona insights estratégicos sobre el rendimiento estudiantil, uso de plataformas digitales y la integración de Inteligencia Artificial en el aprendizaje.
 
 ### ¿Por qué este proyecto?
 
-- 📊 **Visualización intuitiva** de métricas académicas complejas
-- 🎯 **Toma de decisiones** basada en datos en tiempo real
-- 🌐 **Accesibilidad global** con soporte multi-idioma
-- 🎨 **UX/UI profesional** sin animaciones distractivas
-- 🔒 **Sistema de autenticación** integrado
+- **Visualización intuitiva** de métricas académicas complejas
+- **Toma de decisiones** basada en datos en tiempo real
+- **Accesibilidad global** con soporte multi-idioma
+- **UX/UI profesional** sin animaciones distractivas
+- **Sistema de autenticación** integrado
 
 ---
 
-## ✨ Características Principales
+## Características Principales
 
-### 🎨 Interfaz de Usuario
-- ✅ **Diseño Responsive** - Adaptable a móviles, tablets y escritorio
-- ✅ **Modo Oscuro/Claro** - Toggle con persistencia en localStorage
-- ✅ **Sistema Multi-idioma** - Español, English y Português
-- ✅ **UI/UX Profesional** - Sin animaciones, diseño limpio y moderno
-- ✅ **Navegación Intuitiva** - Sidebar colapsable y breadcrumbs
+### Interfaz de Usuario
+- **Diseño Responsive** - Adaptable a móviles, tablets y escritorio
+- **Modo Oscuro/Claro** - Toggle con persistencia en localStorage
+- **Sistema Multi-idioma** - Español, English y Português
+- **UI/UX Profesional** - Sin animaciones, diseño limpio y moderno
+- **Navegación Intuitiva** - Sidebar colapsable y breadcrumbs
 
-### 📊 Visualizaciones de Datos
-- 📈 **Gráfico de Líneas** - Correlación entre horas digitales y GPA
-- 🍩 **Gráfico Donut** - Distribución por modalidad de estudio
-- 🎯 **Gráfico Radar** - Perfil estudiantil comparativo
-- 📊 **Gráfico de Barras** - Impacto de IA en la satisfacción
-- 💳 **KPI Cards** - Métricas clave en tiempo real
+### Visualizaciones de Datos
+- **Gráfico de Líneas** - Correlación entre horas digitales y GPA
+- **Gráfico Donut** - Distribución por modalidad de estudio
+- **Gráfico Radar** - Perfil estudiantil comparativo
+- **Gráfico de Barras** - Impacto de IA en la satisfacción
+- **KPI Cards** - Métricas clave en tiempo real
 
-### 🔐 Características Avanzadas
-- ✅ **Autenticación** - Sistema de login con Context API
-- ✅ **Gestión de Estado** - 4 contextos globales (Auth, Sidebar, Theme, Language)
-- ✅ **Persistencia de Datos** - localStorage para preferencias de usuario
-- ✅ **TypeScript** - Type-safety en todo el proyecto
-- ✅ **SSR/SSG** - Server-Side Rendering con Next.js 16
+### Características Avanzadas
+- **Autenticación** - Sistema de login con Context API
+- **Gestión de Estado** - 4 contextos globales (Auth, Sidebar, Theme, Language)
+- **Persistencia de Datos** - localStorage para preferencias de usuario
+- **TypeScript** - Type-safety en todo el proyecto
+- **SSR/SSG** - Server-Side Rendering con Next.js 16
 
-### 📄 Páginas Implementadas
+### Páginas Implementadas
 1. **Dashboard** - Vista general con KPIs y gráficos principales
 2. **Análisis** - Correlaciones avanzadas y tendencias
 3. **Estudiantes** - Gestión y visualización de datos estudiantiles
@@ -81,7 +81,7 @@
 
 ---
 
-## 🚀 Stack Tecnológico
+## Stack Tecnológico
 
 ### Frontend
 - **[Next.js 16.1.6](https://nextjs.org/)** - Framework React con App Router
@@ -104,7 +104,7 @@
 
 ---
 
-## 🛠️ Instalación
+## Instalación
 
 ### Prerrequisitos
 
@@ -149,7 +149,7 @@ Ejemplo: `usuario@ejemplo.com` / `demo123`
 
 ---
 
-## 📖 Uso
+## Uso
 
 ### Navegación Principal
 
@@ -162,37 +162,37 @@ Ejemplo: `usuario@ejemplo.com` / `demo123`
 
 ### Características por Página
 
-#### 🏠 Dashboard
+#### Dashboard
 - KPIs: Total estudiantes, GPA promedio, nivel de estrés, horas digitales
 - Gráfico de correlación horas digitales vs GPA
 - Distribución por modalidad (Presencial/Virtual)
 - Perfil estudiantil comparativo
 - Impacto de IA en satisfacción académica
 
-#### 📊 Análisis
+#### Análisis
 - Indicadores de correlación avanzados
 - Insights automáticos
 - Recomendaciones basadas en datos
 - Visualizaciones comparativas
 
-#### 👥 Estudiantes
+#### Estudiantes
 - Tabla completa de estudiantes
 - Filtros por modalidad
 - Búsqueda en tiempo real
 - Estadísticas agregadas
 
-#### 📄 Reportes
+#### Reportes
 - Generación de reportes personalizados
 - Multi-formato (PDF, Excel, CSV simulado)
 - Filtros por fecha y categoría
 
-#### 📈 Métricas
+#### Métricas
 - KPIs avanzados
 - Gráficos de tendencias
 - Análisis temporal
 - Comparativas por modalidad
 
-#### ⚙️ Configuración
+#### Configuración
 - **Tema:** Modo claro/oscuro
 - **Idioma:** Español, English, Português
 - **Notificaciones:** Push, Email, Móvil
@@ -201,7 +201,7 @@ Ejemplo: `usuario@ejemplo.com` / `demo123`
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 dashboard-ecosistema-digital/
@@ -256,17 +256,17 @@ dashboard-ecosistema-digital/
 ```
 
 
-## 🔐 Seguridad
+## Seguridad
 
-- ✅ **TypeScript** para prevenir errores en tiempo de compilación
-- ✅ **ESLint** para detectar vulnerabilidades
-- ✅ **Sanitización** de inputs en formularios
-- ✅ **Headers de seguridad** configurados en Next.js
-- ⚠️ **Nota:** El sistema de autenticación actual es demo. Para producción, implementa JWT/OAuth
+- **TypeScript** para prevenir errores en tiempo de compilación
+- **ESLint** para detectar vulnerabilidades
+- **Sanitización** de inputs en formularios
+- **Headers de seguridad** configurados en Next.js
+- **Nota:** El sistema de autenticación actual es demo. Para producción, implementa JWT/OAuth
 
 ---
 
-## 📝 Licencia
+## Licencia
 
 Distribuido bajo la Licencia MIT. Ver [`LICENSE`](LICENSE) para más información.
 
@@ -284,14 +284,9 @@ copies of the Software...
 
 ---
 
-## 👨‍💻 Contacto
+## Contacto
 
 **Ezer Zuñiga**
 
 - Instagram: [@ezerzuniga.oficial16](https://www.instagram.com/ezerzuniga.oficial16/)
 ---
----
-
-<div align="center">
-
-</div>
