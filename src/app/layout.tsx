@@ -6,6 +6,11 @@ import { SidebarProvider } from '@/context/SidebarContext'
 export const metadata: Metadata = {
   title: 'Ecosistema Digital Académico',
   description: 'Análisis estratégico del rendimiento estudiantil y uso de IA',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 }
 
 export default function RootLayout({

@@ -8,11 +8,15 @@ interface Student {
 }
 
 interface HoursVsGpaChartProps {
-  data: Student[];
+  students: Student[];
 }
 
-export default function HoursVsGpaChart({ data }: HoursVsGpaChartProps) {
-  const chartData = data
+export default function HoursVsGpaChart({ students }: HoursVsGpaChartProps) {
+  if (!students || students.length === 0) {
+    return <div className="bg-white rounded-lg border border-gray-200 p-6">Cargando datos...</div>;
+  }
+
+  const chartData = students
     .map((student) => ({
       horas: student.horasDigitales,
       gpa: student.gpa,
@@ -20,8 +24,8 @@ export default function HoursVsGpaChart({ data }: HoursVsGpaChartProps) {
     .sort((a, b) => a.horas - b.horas);
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4">
+    <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <h3 className="text-lg font-bold text-gray-900 mb-6">
         Relación entre Horas de Estudio Digital y GPA
       </h3>
       <ResponsiveContainer width="100%" height={300}>

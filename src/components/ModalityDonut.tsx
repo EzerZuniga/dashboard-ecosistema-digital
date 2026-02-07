@@ -7,13 +7,17 @@ interface Student {
 }
 
 interface ModalityDonutProps {
-  data: Student[];
+  students: Student[];
 }
 
 const COLORS = ['#3b82f6', '#10b981'];
 
-export default function ModalityDonut({ data }: ModalityDonutProps) {
-  const modalityCount = data.reduce((acc, student) => {
+export default function ModalityDonut({ students }: ModalityDonutProps) {
+  if (!students || students.length === 0) {
+    return <div className="bg-white rounded-lg border border-gray-200 p-6">Cargando datos...</div>;
+  }
+
+  const modalityCount = students.reduce((acc, student) => {
     acc[student.modalidad] = (acc[student.modalidad] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
@@ -24,8 +28,8 @@ export default function ModalityDonut({ data }: ModalityDonutProps) {
   }));
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4">
+    <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <h3 className="text-lg font-bold text-gray-900 mb-6">
         Distribución por Modalidad
       </h3>
       <ResponsiveContainer width="100%" height={300}>

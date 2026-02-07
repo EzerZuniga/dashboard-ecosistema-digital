@@ -12,12 +12,16 @@ interface Student {
 }
 
 interface RadarProfileProps {
-  data: Student[];
+  students: Student[];
 }
 
-export default function RadarProfile({ data }: RadarProfileProps) {
-  const presencialStudents = data.filter((s) => s.modalidad === 'Presencial');
-  const virtualStudents = data.filter((s) => s.modalidad === 'Virtual');
+export default function RadarProfile({ students }: RadarProfileProps) {
+  if (!students || students.length === 0) {
+    return <div className="bg-white rounded-lg border border-gray-200 p-6">Cargando datos...</div>;
+  }
+
+  const presencialStudents = students.filter((s) => s.modalidad === 'Presencial');
+  const virtualStudents = students.filter((s) => s.modalidad === 'Virtual');
 
   const avg = (arr: number[]) => arr.reduce((a, b) => a + b, 0) / arr.length;
 
@@ -50,8 +54,8 @@ export default function RadarProfile({ data }: RadarProfileProps) {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4">
+    <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <h3 className="text-lg font-bold text-gray-900 mb-6">
         Perfil Estudiantil Comparativo
       </h3>
       <ResponsiveContainer width="100%" height={350}>

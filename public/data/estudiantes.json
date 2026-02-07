@@ -268,5 +268,185 @@
     "estres": 3,
     "usoIA": 9,
     "satisfaccion": 10
+  },
+  {
+    "id": 31,
+    "modalidad": "Presencial",
+    "horasDigitales": 13,
+    "gpa": 15.4,
+    "estres": 3,
+    "usoIA": 4,
+    "satisfaccion": 7
+  },
+  {
+    "id": 32,
+    "modalidad": "Virtual",
+    "horasDigitales": 27,
+    "gpa": 17.7,
+    "estres": 2,
+    "usoIA": 8,
+    "satisfaccion": 9
+  },
+  {
+    "id": 33,
+    "modalidad": "Presencial",
+    "horasDigitales": 11,
+    "gpa": 14.9,
+    "estres": 4,
+    "usoIA": 3,
+    "satisfaccion": 6
+  },
+  {
+    "id": 34,
+    "modalidad": "Virtual",
+    "horasDigitales": 29,
+    "gpa": 18.0,
+    "estres": 3,
+    "usoIA": 9,
+    "satisfaccion": 10
+  },
+  {
+    "id": 35,
+    "modalidad": "Presencial",
+    "horasDigitales": 17,
+    "gpa": 16.6,
+    "estres": 2,
+    "usoIA": 5,
+    "satisfaccion": 8
+  },
+  {
+    "id": 36,
+    "modalidad": "Virtual",
+    "horasDigitales": 26,
+    "gpa": 17.4,
+    "estres": 3,
+    "usoIA": 7,
+    "satisfaccion": 9
+  },
+  {
+    "id": 37,
+    "modalidad": "Presencial",
+    "horasDigitales": 14,
+    "gpa": 15.6,
+    "estres": 3,
+    "usoIA": 4,
+    "satisfaccion": 7
+  },
+  {
+    "id": 38,
+    "modalidad": "Virtual",
+    "horasDigitales": 28,
+    "gpa": 17.9,
+    "estres": 2,
+    "usoIA": 8,
+    "satisfaccion": 9
+  },
+  {
+    "id": 39,
+    "modalidad": "Presencial",
+    "horasDigitales": 18,
+    "gpa": 16.8,
+    "estres": 3,
+    "usoIA": 6,
+    "satisfaccion": 8
+  },
+  {
+    "id": 40,
+    "modalidad": "Virtual",
+    "horasDigitales": 31,
+    "gpa": 18.4,
+    "estres": 3,
+    "usoIA": 10,
+    "satisfaccion": 10
+  },
+  {
+    "id": 41,
+    "modalidad": "Presencial",
+    "horasDigitales": 10,
+    "gpa": 14.6,
+    "estres": 4,
+    "usoIA": 2,
+    "satisfaccion": 6
+  },
+  {
+    "id": 42,
+    "modalidad": "Virtual",
+    "horasDigitales": 25,
+    "gpa": 17.1,
+    "estres": 3,
+    "usoIA": 7,
+    "satisfaccion": 8
+  },
+  {
+    "id": 43,
+    "modalidad": "Presencial",
+    "horasDigitales": 15,
+    "gpa": 16.0,
+    "estres": 2,
+    "usoIA": 5,
+    "satisfaccion": 7
+  },
+  {
+    "id": 44,
+    "modalidad": "Virtual",
+    "horasDigitales": 27,
+    "gpa": 17.6,
+    "estres": 3,
+    "usoIA": 8,
+    "satisfaccion": 9
+  },
+  {
+    "id": 45,
+    "modalidad": "Presencial",
+    "horasDigitales": 12,
+    "gpa": 15.1,
+    "estres": 3,
+    "usoIA": 3,
+    "satisfaccion": 7
+  },
+  {
+    "id": 46,
+    "modalidad": "Virtual",
+    "horasDigitales": 29,
+    "gpa": 18.1,
+    "estres": 2,
+    "usoIA": 9,
+    "satisfaccion": 10
+  },
+  {
+    "id": 47,
+    "modalidad": "Presencial",
+    "horasDigitales": 16,
+    "gpa": 16.3,
+    "estres": 3,
+    "usoIA": 5,
+    "satisfaccion": 8
+  },
+  {
+    "id": 48,
+    "modalidad": "Virtual",
+    "horasDigitales": 26,
+    "gpa": 17.5,
+    "estres": 3,
+    "usoIA": 7,
+    "satisfaccion": 9
+  },
+  {
+    "id": 49,
+    "modalidad": "Presencial",
+    "horasDigitales": 19,
+    "gpa": 17.0,
+    "estres": 2,
+    "usoIA": 6,
+    "satisfaccion": 8
+  },
+  {
+    "id": 50,
+    "modalidad": "Virtual",
+    "horasDigitales": 30,
+    "gpa": 18.3,
+    "estres": 3,
+    "usoIA": 9,
+    "satisfaccion": 10
   }
 ]

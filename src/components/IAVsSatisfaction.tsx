@@ -8,11 +8,15 @@ interface Student {
 }
 
 interface IAVsSatisfactionProps {
-  data: Student[];
+  students: Student[];
 }
 
-export default function IAVsSatisfaction({ data }: IAVsSatisfactionProps) {
-  const grouped = data.reduce((acc, student) => {
+export default function IAVsSatisfaction({ students }: IAVsSatisfactionProps) {
+  if (!students || students.length === 0) {
+    return <div className="bg-white rounded-lg border border-gray-200 p-6">Cargando datos...</div>;
+  }
+
+  const grouped = students.reduce((acc, student) => {
     const key = student.usoIA;
     if (!acc[key]) {
       acc[key] = [];
@@ -29,8 +33,8 @@ export default function IAVsSatisfaction({ data }: IAVsSatisfactionProps) {
     .sort((a, b) => parseInt(a.usoIA.split(' ')[1]) - parseInt(b.usoIA.split(' ')[1]));
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4">
+    <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <h3 className="text-lg font-bold text-gray-900 mb-6">
         Impacto del Uso de IA en la Satisfacción Académica
       </h3>
       <ResponsiveContainer width="100%" height={300}>

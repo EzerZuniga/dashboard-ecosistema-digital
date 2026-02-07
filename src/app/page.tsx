@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Users, TrendingUp, AlertCircle, Laptop } from 'lucide-react';
+import { Users, TrendingUp, AlertCircle, Laptop, Github } from 'lucide-react';
 import KpiCard from '@/components/KpiCard';
 import HoursVsGpaChart from '@/components/HoursVsGpaChart';
 import ModalityDonut from '@/components/ModalityDonut';
@@ -67,95 +67,122 @@ export default function Home() {
       <Header />
       
       <main 
-        className={`pt-16 min-h-screen transition-all duration-300 ${
+        className={`pt-16 min-h-screen ${
           isOpen ? 'lg:ml-64' : 'ml-0'
         }`}
       >
         <div className="p-4 sm:p-6 lg:p-8">
           {/* Encabezado */}
-          <div className="mb-6 lg:mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
               Dashboard Principal
             </h1>
-            <p className="text-sm sm:text-base text-gray-600">
+            <p className="text-gray-600">
               Análisis estratégico del rendimiento estudiantil y uso de IA
             </p>
           </div>
 
         {/* KPI Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-6 lg:mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <KpiCard
             title="Total Estudiantes"
             value={totalStudents}
-            icon={<Users size={48} strokeWidth={1.5} />}
+            icon={<Users size={28} strokeWidth={2} />}
             color="text-blue-600"
           />
           <KpiCard
             title="GPA Promedio"
             value={avgGpa}
-            icon={<TrendingUp size={48} strokeWidth={1.5} />}
+            icon={<TrendingUp size={28} strokeWidth={2} />}
             color="text-green-600"
           />
           <KpiCard
             title="Nivel de Estrés"
             value={avgStress}
-            icon={<AlertCircle size={48} strokeWidth={1.5} />}
+            icon={<AlertCircle size={28} strokeWidth={2} />}
             color="text-orange-600"
           />
           <KpiCard
             title="Horas Digitales/Sem"
             value={avgHours}
-            icon={<Laptop size={48} strokeWidth={1.5} />}
+            icon={<Laptop size={28} strokeWidth={2} />}
             color="text-purple-600"
           />
         </div>
 
         {/* Visualizaciones */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-4 lg:mb-8">
-          <HoursVsGpaChart data={students} />
-          <ModalityDonut data={students} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <HoursVsGpaChart students={students} />
+          <ModalityDonut students={students} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-4 lg:mb-8">
-          <RadarProfile data={students} />
-          <IAVsSatisfaction data={students} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <RadarProfile students={students} />
+          <IAVsSatisfaction students={students} />
         </div>
 
         {/* Sección de interpretación */}
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="bg-white rounded-lg border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
             Principales Hallazgos
           </h2>
-          <div className="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              <strong>📈 Correlación positiva entre horas digitales y rendimiento:</strong> Los datos revelan 
-              una tendencia clara donde estudiantes que dedican más horas semanales al estudio digital 
-              obtienen un GPA superior, sugiriendo que el uso estratégico de plataformas digitales 
-              contribuye al éxito académico.
-            </p>
-            <p>
-              <strong>🎓 Ventaja de la modalidad virtual:</strong> Los estudiantes en modalidad virtual 
-              muestran promedios ligeramente superiores en GPA y uso de IA, probablemente debido a 
-              una mayor familiaridad con herramientas digitales y flexibilidad en el aprendizaje autodirigido.
-            </p>
-            <p>
-              <strong>🤖 Impacto de la IA en la satisfacción:</strong> Existe una correlación positiva entre 
-              el nivel de uso de Inteligencia Artificial y la satisfacción académica. Los estudiantes que 
-              integran herramientas de IA en su proceso de aprendizaje reportan mayores niveles de 
-              satisfacción, posiblemente por la eficiencia y personalización que estas brindan.
-            </p>
-            <p>
-              <strong>⚖️ Gestión del estrés:</strong> Los niveles de estrés se mantienen moderados en ambas 
-              modalidades, aunque los estudiantes virtuales con mayor uso de IA tienden a reportar niveles 
-              ligeramente menores, lo que sugiere que la tecnología puede actuar como un factor de apoyo 
-              en la gestión de la carga académica.
-            </p>
+          <div className="space-y-5 text-gray-700 leading-relaxed">
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Correlación positiva entre horas digitales y rendimiento</h3>
+              <p>
+                Los datos revelan una tendencia clara donde estudiantes que dedican más horas semanales al estudio digital 
+                obtienen un GPA superior, sugiriendo que el uso estratégico de plataformas digitales 
+                contribuye al éxito académico.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Ventaja de la modalidad virtual</h3>
+              <p>
+                Los estudiantes en modalidad virtual muestran promedios ligeramente superiores en GPA y uso de IA, 
+                probablemente debido a una mayor familiaridad con herramientas digitales y flexibilidad en el aprendizaje autodirigido.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Impacto de la IA en la satisfacción</h3>
+              <p>
+                Existe una correlación positiva entre el nivel de uso de Inteligencia Artificial y la satisfacción académica. 
+                Los estudiantes que integran herramientas de IA en su proceso de aprendizaje reportan mayores niveles de 
+                satisfacción, posiblemente por la eficiencia y personalización que estas brindan.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Gestión del estrés</h3>
+              <p>
+                Los niveles de estrés se mantienen moderados en ambas modalidades, aunque los estudiantes virtuales con mayor 
+                uso de IA tienden a reportar niveles ligeramente menores, lo que sugiere que la tecnología puede actuar como 
+                un factor de apoyo en la gestión de la carga académica.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Footer */}
-        <footer className="text-center mt-10 pb-6 text-gray-500 text-sm">
-          <p>Dashboard generado con Next.js 14 · Datos simulados con fines académicos</p>
+        <footer className="text-center mt-10 pb-6 border-t border-gray-200 pt-6">
+          <div className="flex items-center justify-center gap-2 text-gray-600 text-sm mb-2">
+            <span>Dashboard desarrollado por</span>
+            <a 
+              href="https://www.instagram.com/ezerzuniga.oficial16/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-semibold text-blue-600 hover:text-blue-700"
+            >
+              Ezer Zuniga
+            </a>
+          </div>
+          <a 
+            href="https://github.com/EzerZuniga/dashboard-ecosistema-digital" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 text-sm"
+          >
+            <Github size={16} />
+            <span>Ver repositorio en GitHub</span>
+          </a>
         </footer>
         </div>
       </main>

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom scrollbar styles */
 @layer utilities {
   .scrollbar-thin::-webkit-scrollbar {
     width: 4px;
