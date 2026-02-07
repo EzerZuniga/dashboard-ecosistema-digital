@@ -13,7 +13,7 @@ interface IAVsSatisfactionProps {
 
 export default function IAVsSatisfaction({ students }: IAVsSatisfactionProps) {
   if (!students || students.length === 0) {
-    return <div className="bg-white rounded-lg border border-gray-200 p-6">Cargando datos...</div>;
+    return <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 text-gray-900 dark:text-white">Cargando datos...</div>;
   }
 
   const grouped = students.reduce((acc, student) => {
@@ -33,8 +33,8 @@ export default function IAVsSatisfaction({ students }: IAVsSatisfactionProps) {
     .sort((a, b) => parseInt(a.usoIA.split(' ')[1]) - parseInt(b.usoIA.split(' ')[1]));
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6">
-      <h3 className="text-lg font-bold text-gray-900 mb-6">
+    <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6">
         Impacto del Uso de IA en la Satisfacción Académica
       </h3>
       <ResponsiveContainer width="100%" height={300}>

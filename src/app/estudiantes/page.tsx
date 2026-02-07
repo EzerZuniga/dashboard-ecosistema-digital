@@ -77,20 +77,20 @@ export default function EstudiantesPage() {
   }
 
   const getGPAColor = (gpa: number) => {
-    if (gpa >= 17) return 'text-green-600 bg-green-50';
-    if (gpa >= 15) return 'text-blue-600 bg-blue-50';
+    if (gpa >= 17) return 'text-green-600 dark:text-green-400 bg-green-50';
+    if (gpa >= 15) return 'text-blue-600 dark:text-blue-400 bg-blue-50';
     if (gpa >= 14) return 'text-yellow-600 bg-yellow-50';
     return 'text-red-600 bg-red-50';
   };
 
   const getEstresColor = (estres: number) => {
     if (estres >= 4) return 'text-red-600 bg-red-50';
-    if (estres >= 3) return 'text-orange-600 bg-orange-50';
-    return 'text-green-600 bg-green-50';
+    if (estres >= 3) return 'text-orange-600 dark:text-orange-400 bg-orange-50';
+    return 'text-green-600 dark:text-green-400 bg-green-50';
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Header />
       <Sidebar currentPath="/estudiantes" />
       
@@ -100,15 +100,15 @@ export default function EstudiantesPage() {
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Gestión de Estudiantes</h1>
-            <p className="text-gray-600">Lista completa de {students.length} estudiantes del ecosistema digital</p>
+            <p className="text-gray-600 dark:text-gray-400">Lista completa de {students.length} estudiantes del ecosistema digital</p>
           </div>
 
           {/* Estadísticas rápidas */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
-                  <UserCheck className="text-blue-600" size={20} />
+                <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900 rounded-lg flex items-center justify-center">
+                  <UserCheck className="text-blue-600 dark:text-blue-400" size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Total</p>
@@ -117,10 +117,10 @@ export default function EstudiantesPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center">
-                  <TrendingUp className="text-green-600" size={20} />
+                <div className="w-10 h-10 bg-green-50 dark:bg-green-900 rounded-lg flex items-center justify-center">
+                  <TrendingUp className="text-green-600 dark:text-green-400" size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Alto Rendimiento</p>
@@ -131,10 +131,10 @@ export default function EstudiantesPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center">
-                  <TrendingDown className="text-orange-600" size={20} />
+                <div className="w-10 h-10 bg-orange-50 dark:bg-orange-900 rounded-lg flex items-center justify-center">
+                  <TrendingDown className="text-orange-600 dark:text-orange-400" size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Estrés Alto</p>
@@ -145,10 +145,10 @@ export default function EstudiantesPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center">
-                  <UserX className="text-purple-600" size={20} />
+                <div className="w-10 h-10 bg-purple-50 dark:bg-purple-900 rounded-lg flex items-center justify-center">
+                  <UserX className="text-purple-600 dark:text-purple-400" size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Presencial</p>
@@ -161,7 +161,7 @@ export default function EstudiantesPage() {
           </div>
 
           {/* Barra de búsqueda y filtros */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-6">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 mb-6">
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Búsqueda */}
               <div className="flex-1 relative">
@@ -198,10 +198,10 @@ export default function EstudiantesPage() {
           </div>
 
           {/* Tabla de estudiantes */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-gray-50 border-b border-gray-200">
+                <thead className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">ID</th>
                     <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Modalidad</th>
@@ -281,3 +281,4 @@ export default function EstudiantesPage() {
     </div>
   );
 }
+

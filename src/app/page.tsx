@@ -12,6 +12,7 @@ import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
 import { useAuth } from '@/context/AuthContext';
 import { useSidebar } from '@/context/SidebarContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface Student {
   id: number;
@@ -28,6 +29,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const { isAuthenticated } = useAuth();
   const { isOpen } = useSidebar();
+  const { t } = useLanguage();
   const router = useRouter();
 
   useEffect(() => {
@@ -62,7 +64,7 @@ export default function Home() {
   const avgHours = (students.reduce((sum, s) => sum + s.horasDigitales, 0) / totalStudents).toFixed(1);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Sidebar currentPath="/" />
       <Header />
       
@@ -74,36 +76,36 @@ export default function Home() {
         <div className="p-4 sm:p-6 lg:p-8">
           {/* Encabezado */}
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Dashboard Principal
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+              {t('dashboard.title')}
             </h1>
-            <p className="text-gray-600">
-              Análisis estratégico del rendimiento estudiantil y uso de IA
+            <p className="text-gray-600 dark:text-gray-400">
+              {t('dashboard.subtitle')}
             </p>
           </div>
 
         {/* KPI Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <KpiCard
-            title="Total Estudiantes"
+            title={t('dashboard.students')}
             value={totalStudents}
             icon={<Users size={28} strokeWidth={2} />}
             color="text-blue-600"
           />
           <KpiCard
-            title="GPA Promedio"
+            title={t('dashboard.gpa')}
             value={avgGpa}
             icon={<TrendingUp size={28} strokeWidth={2} />}
             color="text-green-600"
           />
           <KpiCard
-            title="Nivel de Estrés"
+            title={t('dashboard.stress')}
             value={avgStress}
             icon={<AlertCircle size={28} strokeWidth={2} />}
             color="text-orange-600"
           />
           <KpiCard
-            title="Horas Digitales/Sem"
+            title={t('dashboard.hours')}
             value={avgHours}
             icon={<Laptop size={28} strokeWidth={2} />}
             color="text-purple-600"
@@ -122,13 +124,13 @@ export default function Home() {
         </div>
 
         {/* Sección de interpretación */}
-        <div className="bg-white rounded-lg border border-gray-200 p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Principales Hallazgos
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            {t('dashboard.findings')}
           </h2>
-          <div className="space-y-5 text-gray-700 leading-relaxed">
+          <div className="space-y-5 text-gray-700 dark:text-gray-300 leading-relaxed">
             <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Correlación positiva entre horas digitales y rendimiento</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Correlación positiva entre horas digitales y rendimiento</h3>
               <p>
                 Los datos revelan una tendencia clara donde estudiantes que dedican más horas semanales al estudio digital 
                 obtienen un GPA superior, sugiriendo que el uso estratégico de plataformas digitales 
@@ -136,14 +138,14 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Ventaja de la modalidad virtual</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Ventaja de la modalidad virtual</h3>
               <p>
                 Los estudiantes en modalidad virtual muestran promedios ligeramente superiores en GPA y uso de IA, 
                 probablemente debido a una mayor familiaridad con herramientas digitales y flexibilidad en el aprendizaje autodirigido.
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Impacto de la IA en la satisfacción</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Impacto de la IA en la satisfacción</h3>
               <p>
                 Existe una correlación positiva entre el nivel de uso de Inteligencia Artificial y la satisfacción académica. 
                 Los estudiantes que integran herramientas de IA en su proceso de aprendizaje reportan mayores niveles de 
@@ -151,7 +153,7 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Gestión del estrés</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Gestión del estrés</h3>
               <p>
                 Los niveles de estrés se mantienen moderados en ambas modalidades, aunque los estudiantes virtuales con mayor 
                 uso de IA tienden a reportar niveles ligeramente menores, lo que sugiere que la tecnología puede actuar como 
@@ -162,9 +164,9 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <footer className="text-center mt-10 pb-6 border-t border-gray-200 pt-6">
-          <div className="flex items-center justify-center gap-2 text-gray-600 text-sm mb-2">
-            <span>Dashboard desarrollado por</span>
+        <footer className="text-center mt-10 pb-6 border-t border-gray-200 dark:border-gray-700 pt-6">
+          <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400 text-sm mb-2">
+            <span>{t('footer.developed')}</span>
             <a 
               href="https://www.instagram.com/ezerzuniga.oficial16/" 
               target="_blank" 
@@ -178,10 +180,10 @@ export default function Home() {
             href="https://github.com/EzerZuniga/dashboard-ecosistema-digital" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 text-sm"
+            className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-sm"
           >
             <Github size={16} />
-            <span>Ver repositorio en GitHub</span>
+            <span>{t('footer.github')}</span>
           </a>
         </footer>
         </div>

@@ -3,6 +3,7 @@
 import { Home, BarChart3, Users, Settings, FileText, TrendingUp, LogOut, GraduationCap } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { useSidebar } from '@/context/SidebarContext';
+import { useLanguage } from '@/context/LanguageContext';
 import { useRouter } from 'next/navigation';
 
 interface SidebarProps {
@@ -12,15 +13,16 @@ interface SidebarProps {
 export default function Sidebar({ currentPath = '/' }: SidebarProps) {
   const { logout, user } = useAuth();
   const { isOpen, close } = useSidebar();
+  const { t } = useLanguage();
   const router = useRouter();
 
   const menuItems = [
-    { icon: Home, label: 'Dashboard', path: '/', active: currentPath === '/' },
-    { icon: BarChart3, label: 'Análisis', path: '/analisis', active: currentPath === '/analisis' },
-    { icon: Users, label: 'Estudiantes', path: '/estudiantes', active: currentPath === '/estudiantes' },
-    { icon: FileText, label: 'Reportes', path: '/reportes', active: currentPath === '/reportes' },
-    { icon: TrendingUp, label: 'Métricas', path: '/metricas', active: currentPath === '/metricas' },
-    { icon: Settings, label: 'Configuración', path: '/configuracion', active: currentPath === '/configuracion' },
+    { icon: Home, label: t('menu.dashboard'), path: '/', active: currentPath === '/' },
+    { icon: BarChart3, label: t('menu.analysis'), path: '/analisis', active: currentPath === '/analisis' },
+    { icon: Users, label: t('menu.students'), path: '/estudiantes', active: currentPath === '/estudiantes' },
+    { icon: FileText, label: t('menu.reports'), path: '/reportes', active: currentPath === '/reportes' },
+    { icon: TrendingUp, label: t('menu.metrics'), path: '/metricas', active: currentPath === '/metricas' },
+    { icon: Settings, label: t('menu.settings'), path: '/configuracion', active: currentPath === '/configuracion' },
   ];
 
   const handleLogout = () => {
@@ -36,7 +38,7 @@ export default function Sidebar({ currentPath = '/' }: SidebarProps) {
   return (
     <>
       {/* Sidebar */}
-      <aside className={`fixed left-0 top-0 h-screen w-64 bg-slate-900 text-white shadow-xl z-50 ${
+      <aside className={`fixed left-0 top-0 h-screen w-64 bg-slate-900 dark:bg-slate-950 text-white shadow-xl z-50 ${
         isOpen ? '' : 'hidden'
       }`}>
         
@@ -69,7 +71,7 @@ export default function Sidebar({ currentPath = '/' }: SidebarProps) {
           {/* Menu Header */}
           <div className="px-4 pt-4 pb-2">
             <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-              Menú Principal
+              {t('menu.title')}
             </h3>
           </div>
 
@@ -99,7 +101,7 @@ export default function Sidebar({ currentPath = '/' }: SidebarProps) {
             className="w-full flex items-center gap-3 px-3 py-2.5 rounded-md text-slate-300 hover:bg-red-600 hover:text-white"
           >
             <LogOut size={18} />
-            <span className="font-medium text-sm">Cerrar sesión</span>
+            <span className="font-medium text-sm">{t('menu.logout')}</span>
           </button>
         </div>
       </aside>

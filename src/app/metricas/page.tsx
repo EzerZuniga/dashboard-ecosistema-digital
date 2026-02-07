@@ -48,10 +48,10 @@ export default function MetricasPage() {
 
   if (!isAuthenticated || loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Cargando métricas...</p>
+          <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full mx-auto"></div>
+          <p className="mt-4 text-gray-600 dark:text-gray-400">Cargando métricas...</p>
         </div>
       </div>
     );
@@ -105,7 +105,7 @@ export default function MetricasPage() {
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Métricas Detalladas</h1>
-            <p className="text-gray-600">Indicadores clave de rendimiento del ecosistema digital</p>
+            <p className="text-gray-600 dark:text-gray-400">Indicadores clave de rendimiento del ecosistema digital</p>
           </div>
 
           {/* KPIs Principales */}
@@ -113,22 +113,22 @@ export default function MetricasPage() {
             <KpiCard
               title="Total Estudiantes"
               value={students.length}
-              icon={<Users size={36} className="text-blue-600" />}
+              icon={<Users size={36} className="text-blue-600 dark:text-blue-400" />}
             />
             <KpiCard
               title="GPA Promedio"
               value={avgGpa.toFixed(2)}
-              icon={<Award size={36} className="text-green-600" />}
+              icon={<Award size={36} className="text-green-600 dark:text-green-400" />}
             />
             <KpiCard
               title="Nivel de Estrés"
               value={avgEstres.toFixed(2)}
-              icon={<AlertCircle size={36} className="text-orange-600" />}
+              icon={<AlertCircle size={36} className="text-orange-600 dark:text-orange-400" />}
             />
             <KpiCard
               title="Horas Digitales/Sem"
               value={avgHoras.toFixed(1)}
-              icon={<Clock size={36} className="text-purple-600" />}
+              icon={<Clock size={36} className="text-purple-600 dark:text-purple-400" />}
             />
           </div>
 
@@ -139,7 +139,7 @@ export default function MetricasPage() {
                 <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
                   <Target className="text-white" size={24} />
                 </div>
-                <TrendingUp className="text-blue-600" size={24} />
+                <TrendingUp className="text-blue-600 dark:text-blue-400" size={24} />
               </div>
               <h3 className="text-sm font-medium text-blue-700 mb-2">Alto Rendimiento</h3>
               <p className="text-3xl font-bold text-blue-900 mb-1">{highPerformers}</p>
@@ -151,7 +151,7 @@ export default function MetricasPage() {
                 <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
                   <Heart className="text-white" size={24} />
                 </div>
-                <TrendingDown className="text-green-600" size={24} />
+                <TrendingDown className="text-green-600 dark:text-green-400" size={24} />
               </div>
               <h3 className="text-sm font-medium text-green-700 mb-2">Bajo Estrés</h3>
               <p className="text-3xl font-bold text-green-900 mb-1">{lowStress}</p>
@@ -163,7 +163,7 @@ export default function MetricasPage() {
                 <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
                   <Brain className="text-white" size={24} />
                 </div>
-                <Zap className="text-purple-600" size={24} />
+                <Zap className="text-purple-600 dark:text-purple-400" size={24} />
               </div>
               <h3 className="text-sm font-medium text-purple-700 mb-2">Adopción IA Alta</h3>
               <p className="text-3xl font-bold text-purple-900 mb-1">{highIAUsers}</p>
@@ -174,9 +174,9 @@ export default function MetricasPage() {
           {/* Gráficos de tendencias */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             {/* Tendencia temporal */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <Activity className="text-blue-600" size={20} />
+                <Activity className="text-blue-600 dark:text-blue-400" size={20} />
                 Evolución Temporal
               </h3>
               <ResponsiveContainer width="100%" height={300}>
@@ -193,7 +193,7 @@ export default function MetricasPage() {
             </div>
 
             {/* Distribución por modalidad */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <ModalityDonut students={students} />
             </div>
           </div>
@@ -201,9 +201,9 @@ export default function MetricasPage() {
           {/* Más gráficos */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             {/* Distribución de horas */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <Clock className="text-purple-600" size={20} />
+                <Clock className="text-purple-600 dark:text-purple-400" size={20} />
                 Distribución de Horas Digitales
               </h3>
               <ResponsiveContainer width="100%" height={300}>
@@ -218,9 +218,9 @@ export default function MetricasPage() {
             </div>
 
             {/* Rendimiento por uso de IA */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <Brain className="text-blue-600" size={20} />
+                <Brain className="text-blue-600 dark:text-blue-400" size={20} />
                 Rendimiento por Nivel de Uso de IA
               </h3>
               <ResponsiveContainer width="100%" height={300}>
@@ -237,7 +237,7 @@ export default function MetricasPage() {
 
           {/* Métricas adicionales */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
               <p className="text-sm text-gray-600 mb-1">Uso Promedio IA</p>
               <p className="text-2xl font-bold text-gray-900">{avgIA.toFixed(1)}/10</p>
               <div className="mt-2 w-full bg-gray-200 rounded-full h-2">
@@ -245,7 +245,7 @@ export default function MetricasPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
               <p className="text-sm text-gray-600 mb-1">Satisfacción Promedio</p>
               <p className="text-2xl font-bold text-gray-900">{avgSatisfaccion.toFixed(1)}/10</p>
               <div className="mt-2 w-full bg-gray-200 rounded-full h-2">
@@ -253,7 +253,7 @@ export default function MetricasPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
               <p className="text-sm text-gray-600 mb-1">Modalidad Dominante</p>
               <p className="text-2xl font-bold text-gray-900">
                 {students.filter(s => s.modalidad === 'Presencial').length > students.filter(s => s.modalidad === 'Virtual').length 
@@ -268,7 +268,7 @@ export default function MetricasPage() {
               </p>
             </div>
 
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
               <p className="text-sm text-gray-600 mb-1">Tasa de Éxito</p>
               <p className="text-2xl font-bold text-gray-900">
                 {((students.filter(s => s.gpa >= 14).length / students.length) * 100).toFixed(0)}%
@@ -282,3 +282,4 @@ export default function MetricasPage() {
     </div>
   );
 }
+

@@ -22,7 +22,7 @@ export default function ReportesPage() {
 
   if (!isAuthenticated) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
         </div>
@@ -103,10 +103,10 @@ export default function ReportesPage() {
 
   const getColorClasses = (color: string) => {
     const colors = {
-      blue: 'bg-blue-50 border-blue-200 text-blue-700',
-      green: 'bg-green-50 border-green-200 text-green-700',
-      purple: 'bg-purple-50 border-purple-200 text-purple-700',
-      orange: 'bg-orange-50 border-orange-200 text-orange-700'
+      blue: 'bg-blue-50 dark:bg-blue-900 border-blue-200 text-blue-700',
+      green: 'bg-green-50 dark:bg-green-900 border-green-200 text-green-700',
+      purple: 'bg-purple-50 dark:bg-purple-900 border-purple-200 text-purple-700',
+      orange: 'bg-orange-50 dark:bg-orange-900 border-orange-200 text-orange-700'
     };
     return colors[color as keyof typeof colors];
   };
@@ -123,10 +123,10 @@ export default function ReportesPage() {
 
   const getIconColor = (color: string) => {
     const colors = {
-      blue: 'text-blue-600',
-      green: 'text-green-600',
-      purple: 'text-purple-600',
-      orange: 'text-orange-600'
+      blue: 'text-blue-600 dark:text-blue-400',
+      green: 'text-green-600 dark:text-green-400',
+      purple: 'text-purple-600 dark:text-purple-400',
+      orange: 'text-orange-600 dark:text-orange-400'
     };
     return colors[color as keyof typeof colors];
   };
@@ -142,7 +142,7 @@ export default function ReportesPage() {
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Generación de Reportes</h1>
-            <p className="text-gray-600">Crea reportes personalizados del ecosistema digital académico</p>
+            <p className="text-gray-600 dark:text-gray-400">Crea reportes personalizados del ecosistema digital académico</p>
           </div>
 
           {/* Tipos de reportes */}
@@ -169,7 +169,7 @@ export default function ReportesPage() {
                           {report.fields.map((field, idx) => (
                             <span 
                               key={idx}
-                              className="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-700 border border-gray-200"
+                              className="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-700 border border-gray-200 dark:border-gray-700"
                             >
                               {field}
                             </span>
@@ -196,15 +196,15 @@ export default function ReportesPage() {
           <div>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-gray-900">Reportes Recientes</h2>
-              <button className="flex items-center gap-2 px-4 py-2 text-sm text-blue-600 hover:text-blue-700 font-medium">
+              <button className="flex items-center gap-2 px-4 py-2 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 font-medium">
                 <Filter size={18} />
                 Filtrar
               </button>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
               <table className="w-full">
-                <thead className="bg-gray-50 border-b border-gray-200">
+                <thead className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Nombre</th>
                     <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Tipo</th>
@@ -237,12 +237,12 @@ export default function ReportesPage() {
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-2">
-                          <CheckCircle className="text-green-600" size={16} />
-                          <span className="text-sm font-medium text-green-600">{report.status}</span>
+                          <CheckCircle className="text-green-600 dark:text-green-400" size={16} />
+                          <span className="text-sm font-medium text-green-600 dark:text-green-400">{report.status}</span>
                         </div>
                       </td>
                       <td className="px-6 py-4">
-                        <button className="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 font-medium">
+                        <button className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 font-medium">
                           <Download size={16} />
                           Descargar
                         </button>
@@ -255,10 +255,10 @@ export default function ReportesPage() {
           </div>
 
           {/* Info adicional */}
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
+          <div className="mt-8 bg-blue-50 dark:bg-blue-900 border border-blue-200 rounded-xl p-6">
             <div className="flex gap-4">
               <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <FileText className="text-blue-600" size={20} />
+                <FileText className="text-blue-600 dark:text-blue-400" size={20} />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Sobre los Reportes</h3>
@@ -278,3 +278,4 @@ export default function ReportesPage() {
     </div>
   );
 }
+
