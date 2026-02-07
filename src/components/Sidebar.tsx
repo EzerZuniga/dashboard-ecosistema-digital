@@ -53,21 +53,8 @@ export default function Sidebar({ currentPath = '/' }: SidebarProps) {
           </div>
         </div>
 
-        {/* User Profile */}
-        <div className="p-5 border-b border-slate-700">
-          <div className="flex items-center gap-3">
-            <div className="w-11 h-11 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-base">
-              {user?.avatar || user?.name?.charAt(0)?.toUpperCase() || 'A'}
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="font-medium text-sm text-white truncate">{user?.name || 'Usuario'}</p>
-              <p className="text-xs text-slate-400 truncate">{user?.role || 'Analista de Datos'}</p>
-            </div>
-          </div>
-        </div>
-
         {/* Scrollable Menu Area */}
-        <div className="overflow-y-auto h-[calc(100vh-280px)] scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
+        <div className="overflow-y-auto h-[calc(100vh-180px)] scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
           {/* Menu Header */}
           <div className="px-4 pt-4 pb-2">
             <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wider">

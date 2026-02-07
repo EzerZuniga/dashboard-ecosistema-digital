@@ -1,6 +1,7 @@
 'use client';
 
 import { Bell, Search, Menu, X } from 'lucide-react';
+import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useSidebar } from '@/context/SidebarContext';
 import { useLanguage } from '@/context/LanguageContext';
@@ -9,6 +10,20 @@ export default function Header() {
   const { user } = useAuth();
   const { isOpen, toggle } = useSidebar();
   const { t } = useLanguage();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    // Aquí puedes agregar lógica de búsqueda si lo necesitas
+  };
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      console.log('Buscando:', searchQuery);
+      // Aquí puedes implementar la lógica de búsqueda
+    }
+  };
 
   return (
     <header className={`fixed top-0 right-0 h-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 z-30 ${
@@ -39,14 +54,16 @@ export default function Header() {
           </div>
 
           {/* Search Bar */}
-          <div className="hidden sm:flex flex-1 relative">
+          <form onSubmit={handleSearchSubmit} className="hidden sm:flex flex-1 relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={20} />
             <input
               type="text"
+              value={searchQuery}
+              onChange={handleSearch}
               placeholder={t('search.placeholder')}
               className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
             />
-          </div>
+          </form>
         </div>
 
         {/* Right Section */}
